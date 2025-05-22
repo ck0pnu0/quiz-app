@@ -1,0 +1,21 @@
+@use '../../../styles/base/spacing' as s;
+@use '../../../styles/base/colors' as c;
+@use '../../../styles/base/fonts' as f;
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    margin-bottom: 85px;
+
+    .topic {
+        display: flex;
+    }
+
+    h4 {
+        padding-left: s.$spacing-300;
+        color: c.$blue-900;
+        align-self: center;
+    }
+}

@@ -1,0 +1,43 @@
+@use '../../../styles/base/spacing' as s;
+@use '../../../styles/base/colors' as c;
+@use '../../../styles/base/fonts' as f;
+
+:host {
+    .option {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        background: white;
+        border: 3px solid white;
+        padding: s.$spacing-300;
+        display: flex;
+        font-size: f.$font-size-h4;
+        font-weight: f.$font-weight-h;
+        line-height: 56px;
+        color: c.$blue-900;
+        cursor: pointer;
+    
+        .icon {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: c.$gray-50;
+            width: 56px;
+            height: 56px;
+            text-align: center;
+            margin-right: s.$spacing-400;
+            color: c.$gray-500;
+        }
+    }
+
+    &.selected {
+        .option {
+            border-color: c.$purple-600;
+
+            .icon {
+                color: white;
+                background-color: c.$purple-600;
+            }
+        }
+    }
+}

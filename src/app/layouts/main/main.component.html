@@ -1,0 +1,20 @@
+<main>
+    <div class="content">
+        <div class="welcome-screen">
+            @if (!quizStarted()) {
+                <h2>
+                    <span class="heading-light">Welcome to the</span>
+                    Frontend Quiz!
+                </h2>
+                <h6>Pick a subject to get started.</h6>
+            }
+            <!-- question -->
+            <!-- progress bar -->
+        </div>
+    </div>
+    <div class="options">
+        @for (option of options(); track $index) {
+            <app-option-item [option]="option" [index]="$index" (select)="onSelect($event)"></app-option-item>
+        } 
+    </div>
+</main>

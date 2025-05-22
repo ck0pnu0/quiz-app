@@ -1,0 +1,8 @@
+<div class="switch">
+    <app-icon size="small" type="sun">light</app-icon>
+    <label class="toggle-container">
+        <input type="checkbox" [checked]="isChecked()" (change)="toggle()" />
+        <span class="slider"></span>
+    </label>
+    <app-icon size="small" type="moon">dark</app-icon>
+</div>

@@ -1,0 +1,27 @@
+@use '../../../styles/base/spacing' as s;
+@use '../../../styles/base/colors' as c;
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-screen {
+    h2 {
+        padding-bottom: s.$spacing-600;
+        color: c.$blue-900;
+    }
+
+    h6 {
+        color: c.$gray-500;
+    }
+}
+
+.content {
+    width: 465px;
+}
+
+.options {
+    width: 564px;
+}
+

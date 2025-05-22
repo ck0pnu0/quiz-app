@@ -1,0 +1,9 @@
+<header>
+    <div class="topic">
+        @if(topic().length) {
+            <app-icon size="large" type="{{ topic() }}"></app-icon>
+            <h4>{{ topic() }}</h4>
+        }
+    </div>
+    <theme-switch (themeChanged)="onThemeChanged($event)"></theme-switch>
+</header>

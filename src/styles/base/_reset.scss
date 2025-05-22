@@ -1,0 +1,79 @@
+/* _reset.scss */
+
+/* === Modern CSS Reset === */
+
+/* Universal Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fff;
+    color: #111;
+  }
+  
+  body {
+    text-rendering: optimizeSpeed;
+  }
+  
+  /* Media Queries for Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Global Image and Media Reset */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Form and Button Reset */
+  input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* Focus Visible for Accessibility */
+  :focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+  

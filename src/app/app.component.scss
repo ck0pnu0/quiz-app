@@ -1,0 +1,16 @@
+@use '../styles/base/colors' as c;
+
+.app {
+    background-image: url('/assets/images/pattern-background-desktop-light.svg');
+    background-color: c.$gray-50;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}

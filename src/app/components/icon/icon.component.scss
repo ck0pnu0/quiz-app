@@ -1,0 +1,39 @@
+@use '../../../styles/base/colors' as c;
+@use '../../../styles/base/spacing' as s;
+
+$icon-path: '/assets/images/icons';
+
+.icon {
+    display: block;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center center;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    border-radius: 6px;
+
+    &-html {
+        background-image: url('#{$icon-path}/icon-html.svg');
+        background-color: c.$orange-50;
+    }
+    &-accessibility {
+        background-image: url('#{$icon-path}/icon-accessibility.svg');
+        background-color: c.$purple-100;
+    }
+    &-css {
+        background-image: url('#{$icon-path}/icon-css.svg');
+        background-color: c.$green-100;
+    }
+    &-js {
+        background-image: url('#{$icon-path}/icon-js.svg');
+        background-color: c.$blue-50;
+    }
+    &-sun {
+        background-image: url('#{$icon-path}/icon-sun-dark.svg');
+    }
+    &-moon {    
+        background-image: url('#{$icon-path}/icon-moon-dark.svg');
+    }
+}
+

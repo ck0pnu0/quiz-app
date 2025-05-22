@@ -1,0 +1,10 @@
+<div class="option">
+    <div class="icon">
+        @if (icon().length) {
+            <!-- <app-icon ></app-icon> -->
+        } @else {
+            <span>{{ optionIdxLetter() }}</span>
+        }
+    </div>
+    <span>{{ option().content }}</span>
+</div>
