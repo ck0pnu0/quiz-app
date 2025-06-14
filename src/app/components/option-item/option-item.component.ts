@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Option, optionIndexes } from './option-item.model';
 
 @Component({
-  selector: 'app-option-item',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './option-item.component.html',
-  styleUrl: './option-item.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-option-item',
+    imports: [CommonModule],
+    templateUrl: './option-item.component.html',
+    styleUrl: './option-item.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OptionItemComponent {
   option = input.required<Option>();

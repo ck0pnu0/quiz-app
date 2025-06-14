@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
 import { IconSizeDirective } from '../../shared';
 
 @Component({
-  selector: 'app-icon',
-  standalone: true,
-  imports: [IconSizeDirective],
-  templateUrl: './icon.component.html',
-  styleUrl: './icon.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-icon',
+    imports: [IconSizeDirective],
+    templateUrl: './icon.component.html',
+    styleUrl: './icon.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent {
   type = input.required<string>();

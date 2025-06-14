@@ -5,12 +5,11 @@ import { IconComponent } from '../../components/icon/icon.component';
 import { Theme } from '../../shared/utils';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [ThemeSwitchComponent, IconComponent],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-header',
+    imports: [ThemeSwitchComponent, IconComponent],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   topic = input.required<string>();
