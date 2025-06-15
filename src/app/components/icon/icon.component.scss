@@ -14,19 +14,19 @@ $icon-path: '/assets/images/icons';
     border-radius: 6px;
 
     &-html {
-        background-image: url('#{$icon-path}/icon-html.svg');
+        background-image: url('#{$icon-path}/html.svg');
         background-color: c.$orange-50;
     }
     &-accessibility {
-        background-image: url('#{$icon-path}/icon-accessibility.svg');
+        background-image: url('#{$icon-path}/accessibility.svg');
         background-color: c.$purple-100;
     }
     &-css {
-        background-image: url('#{$icon-path}/icon-css.svg');
+        background-image: url('#{$icon-path}/css.svg');
         background-color: c.$green-100;
     }
     &-js {
-        background-image: url('#{$icon-path}/icon-js.svg');
+        background-image: url('#{$icon-path}/js.svg');
         background-color: c.$blue-50;
     }
     &-sun {

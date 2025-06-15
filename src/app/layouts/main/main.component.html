@@ -13,8 +13,16 @@
         </div>
     </div>
     <div class="options">
-        @for (option of options(); track $index) {
-            <app-option-item [option]="option" [index]="$index" (select)="onSelect($event)"></app-option-item>
-        } 
+        @if (!quizStarted()) {
+            @for (option of topics(); track $index) {
+                <app-option-item [option]="option" (select)="onSelect($event)"></app-option-item>
+            }
+        } @else {
+            @for (question of topicQuestions(); track question) {
+                @for(option of question.options; track $index) {
+                    <app-question-item [option]="option" [index]="$index" (select)="onSelect($event)"></app-question-item>
+                }
+            } 
+        }
     </div>
 </main>
