@@ -1,0 +1,40 @@
+@use './colors' as c;
+
+$icon-path: '/assets/images/icons';
+
+:root {
+  --bg-primary-color: #{c.$gray-50};
+  --bg-primary-img: url('/assets/images/pattern-background-desktop-light.svg');
+  --font-color-welcome-heading: #{c.$blue-900};
+  --font-color-welcome-secondary: #{c.$gray-500};
+  --option-bg-primary: white;
+  --option-color: #{c.$blue-900};
+  --font-color-primary: #{c.$blue-900};
+  --theme-icon-sun: url('#{$icon-path}/icon-sun-dark.svg');
+  --theme-icon-moon: url('#{$icon-path}/icon-moon-dark.svg');
+  --card-font-color: #{c.$gray-500};
+  --card-font-color-heading: #{c.$blue-900};
+}
+
+.theme-dark {
+  --bg-primary-color: #{c.$blue-900};
+  --bg-primary-img: url('/assets/images/pattern-background-desktop-dark.svg');
+  --font-color-welcome-heading: white;
+  --font-color-welcome-secondary: #{c.$blue-300};
+  --option-bg-primary: #{c.$blue-850};
+  --font-color-primary: white;
+  --option-color: white;
+  --theme-icon-sun: url('#{$icon-path}/icon-sun-light.svg');
+  --theme-icon-moon: url('#{$icon-path}/icon-moon-light.svg');
+  --card-font-color: #{c.$blue-300};
+  --card-font-color-heading: white;
+}
+
+.app {
+    background-image: var(--bg-primary-img);
+    background-color: var(--bg-primary-color);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+}

@@ -1,4 +1,4 @@
-import { Component, Signal, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layouts/header/header.component';
 import { MainComponent } from './layouts/main/main.component';
@@ -10,6 +10,13 @@ import { MainComponent } from './layouts/main/main.component';
     styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public readonly topic: Signal<string> = signal<string>('');
-  // selectedTopic (add state)
+  public topic = signal<string>('');
+
+  onTopicSelect(subject: string) {
+    this.topic.set(subject);
+  }
+
+  onThemeChanged() {
+    document.body.classList.toggle(`theme-dark`);
+  }
 }

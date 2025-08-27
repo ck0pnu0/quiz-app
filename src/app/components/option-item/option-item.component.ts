@@ -20,16 +20,8 @@ export class OptionItemComponent {
 
   select = output<string>();
 
-  selected = signal<boolean>(false);
-
   @HostListener('click', ['$event.target'])
   onSelect() {
-    this.selected.update(() => !this.selected());
     this.select.emit(this.option().title);
-  }
-
-  @HostBinding('class.selected')
-  get selectedClass() {
-    return this.selected();
   }
 }

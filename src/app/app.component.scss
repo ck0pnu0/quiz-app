@@ -1,12 +1,13 @@
-@use '../styles/base/colors' as c;
+// @use '../styles/base/colors' as c;
 
-.app {
-    background-image: url('/assets/images/pattern-background-desktop-light.svg');
-    background-color: c.$gray-50;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
+// .app {
+//     background-image: url('/assets/images/pattern-background-desktop-light.svg');
+//     // background-color: var(--bg-primary-color);
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     background-size: cover;
+//     min-height: 100vh;
+// }
 
 .container {
     width: 1200px;

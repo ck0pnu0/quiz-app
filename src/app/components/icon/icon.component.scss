@@ -30,10 +30,16 @@ $icon-path: '/assets/images/icons';
         background-color: c.$blue-50;
     }
     &-sun {
-        background-image: url('#{$icon-path}/icon-sun-dark.svg');
+        background-image: var(--theme-icon-sun);
     }
     &-moon {    
-        background-image: url('#{$icon-path}/icon-moon-dark.svg');
+        background-image: var(--theme-icon-moon);
+    }
+    &-correct {
+        background-image: url('#{$icon-path}/icon-correct.svg');
+    }
+    &-incorrect {
+        background-image: url('#{$icon-path}/icon-incorrect.svg');
     }
 }
 

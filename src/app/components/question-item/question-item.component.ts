@@ -1,17 +1,20 @@
-import { Component, computed, HostBinding, HostListener, input, output, signal } from '@angular/core';
+import { Component, computed, HostListener, input, output } from '@angular/core';
 import { optionIndexes } from '../option-item';
+import { IconComponent } from '../icon/icon.component';
+import { Status } from '../../shared/utils';
 
 @Component({
   selector: 'app-question-item',
-  imports: [],
+  imports: [IconComponent],
   templateUrl: './question-item.component.html',
   styleUrl: './question-item.component.scss'
 })
 export class QuestionItemComponent {
-  selected = signal<boolean>(false);
-
   option = input.required<string>();
   index = input.required<number>();
+  selected = input.required<boolean>();
+  showIcon = input.required<boolean>();
+  statusIcon = input.required<Status | null>();
 
   optionIdxLetter = computed(() => optionIndexes[this.index()]);
   
@@ -19,12 +22,6 @@ export class QuestionItemComponent {
 
   @HostListener('click', ['$event.target'])
   onSelect() {
-    this.selected.update(() => !this.selected());
     this.select.emit(this.option());
-  }
-
-  @HostBinding('class.selected')
-  get selectedClass() {
-    return this.selected();
   }
 }

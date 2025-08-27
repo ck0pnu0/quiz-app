@@ -11,3 +11,5 @@ export interface Questions {
     options: string[];
     question: string;
 }
+
+export type Status = 'correct' | 'incorrect';

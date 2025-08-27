@@ -3,4 +3,10 @@
         <span>{{ optionIdxLetter() }}</span>
     </div>
     <span>{{ option() }}</span>
+
+    @if (showIcon() && statusIcon() !== null) {
+        <div class="status-icon">
+            <app-icon [type]="`${statusIcon()}`" size="medium"></app-icon>
+        </div>
+    }
 </div>

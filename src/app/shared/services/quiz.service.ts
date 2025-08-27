@@ -11,7 +11,7 @@ export class QuizService {
     dbData = toSignal(this.http.get<Record<string, Quizzes[]>>('./assets/data/data.json').pipe(shareReplay(1)), { initialValue: { quizzes: [] } });
     
     topics = computed(() => this.dbData()['quizzes'] ?? []);
-    questions = computed(() => this.topics()
+    questionsByTopic = computed(() => this.topics()
         .reduce((acc, topic) => {
             if (!acc[topic.title]) {
                 acc[topic.title] = topic.questions!;

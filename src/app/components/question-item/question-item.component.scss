@@ -7,14 +7,15 @@
         position: relative;
         overflow: hidden;
         border-radius: 24px;
-        background: white;
-        border: 3px solid white;
+        background: var(--option-bg-primary);
+        border: 3px solid var(--option-bg-primary);
         padding: s.$spacing-300;
         display: flex;
+        align-items: center;
         font-size: f.$font-size-h4;
         font-weight: f.$font-weight-h;
         line-height: 56px;
-        color: c.$blue-900;
+        color: var(--option-color);
         cursor: pointer;
         margin-bottom: s.$spacing-200;
     
@@ -28,6 +29,11 @@
             text-align: center;
             margin-right: s.$spacing-400;
             color: c.$gray-500;
+            flex-shrink: 0;
+        }
+
+        > span {
+            flex-grow: 2;
         }
     }
 
@@ -38,6 +44,26 @@
             .icon {
                 color: white;
                 background-color: c.$purple-600;
+            }
+        }
+    }
+
+    &.correct {
+        .option {
+            border-color: c.$green-500;
+            .icon {
+                color: white;
+                background-color: c.$green-500;
+            }
+        }
+    }
+
+    &.incorrect {
+        .option {
+            border-color: c.$red-500;
+            .icon {
+                color: white;
+                background-color: c.$red-500;
             }
         }
     }

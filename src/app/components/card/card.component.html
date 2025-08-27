@@ -1,0 +1,8 @@
+<div class="card">
+    <h4 class="subject">
+        <app-icon [type]="selectedTopic()" size="large"></app-icon>
+        {{ selectedTopic() }}
+    </h4>
+    <h1>{{ correctAnswers() }}</h1>
+    <p>out of {{ allQuestions() }}</p>
+</div>

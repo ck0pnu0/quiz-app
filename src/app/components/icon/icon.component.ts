@@ -9,7 +9,7 @@ import { IconSizeDirective } from '../../shared';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent {
-  // create in utils method to get the `html/css...` from url
   type = input.required<string>();
+  formatType = computed(() => this.type().toLowerCase() === 'javascript' ? 'js' : this.type().toLowerCase());
   size = input.required<'large' | 'medium' | 'small'>();
 }

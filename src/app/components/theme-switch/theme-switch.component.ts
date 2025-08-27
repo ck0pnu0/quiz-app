@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, computed, output, signal } from '@angular/core';
-import { Theme } from '../../shared/utils';
 import { IconComponent } from '../icon/icon.component';
 
 @Component({
@@ -14,10 +13,10 @@ export class ThemeSwitchComponent {
 
   themeOption = computed(() => this.isChecked() ? 'dark' : 'light');
 
-  themeChanged = output<Theme>();
+  themeChanged = output<void>();
 
   toggle() {
     this.isChecked.set(!this.isChecked());
-    this.themeChanged.emit(this.themeOption());
+    this.themeChanged.emit();
   }
 }

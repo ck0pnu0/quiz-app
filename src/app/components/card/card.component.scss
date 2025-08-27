@@ -1,0 +1,26 @@
+@use '../../../styles/base/spacing' as s;
+@use '../../../styles/base/colors' as c;
+
+.card {
+    padding: s.$spacing-600;
+    border-radius: s.$spacing-300;
+    background: var(--option-bg-primary);
+    box-shadow: 0 16px 40px (rgba($color: #8FA0C1, $alpha: 0.14));
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: s.$spacing-400;
+    color: var(--card-font-color);
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--card-font-color-heading);
+    }
+    
+    h4.subject {
+        display: flex;
+        align-items: center;
+        margin-bottom: s.$spacing-500;
+        app-icon {
+            margin-right: s.$spacing-300;
+        }
+    }
+}
