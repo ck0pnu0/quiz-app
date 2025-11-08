@@ -1,9 +1,11 @@
 <header>
     <div class="topic">
         @if(topic().length) {
-            <app-icon size="large" type="{{ topic() }}"></app-icon>
-            <h4>{{ topic() }}</h4>
+            <h4 class="subject">
+                <app-icon [type]="topic()" [size]="isMobileView() ? 'medium' : 'large'"></app-icon>
+                {{ topic() }}
+            </h4>
         }
     </div>
-    <theme-switch (themeChanged)="onThemeChanged($event)"></theme-switch>
+    <theme-switch [isMobileView]="isMobileView()" (themeChanged)="onThemeChanged()"></theme-switch>
 </header>

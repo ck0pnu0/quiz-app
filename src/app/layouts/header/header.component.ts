@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
 import { ThemeSwitchComponent } from '../../components/theme-switch/theme-switch.component';
 import { IconComponent } from '../../components/icon/icon.component';
-import { Theme } from '../../shared/utils';
 
 @Component({
     selector: 'app-header',
@@ -13,8 +12,11 @@ import { Theme } from '../../shared/utils';
 })
 export class HeaderComponent {
   topic = input.required<string>();
+  isMobileView = input.required<boolean>();
 
-  onThemeChanged(theme: Theme) {
-    console.log('theme: ', theme);
+  themeChanged = output<void>();
+
+  onThemeChanged() {
+    this.themeChanged.emit();
   }
 }

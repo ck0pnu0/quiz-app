@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, output, signal } from '@angular/core';
-import { Theme } from '../../shared/utils';
+import { ChangeDetectionStrategy, Component, computed, input, output, signal } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 
 @Component({
@@ -11,13 +10,14 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class ThemeSwitchComponent {
   isChecked = signal<boolean>(false);
-
+  isMobileView = input.required<boolean>();
+  
   themeOption = computed(() => this.isChecked() ? 'dark' : 'light');
 
-  themeChanged = output<Theme>();
+  themeChanged = output<void>();
 
   toggle() {
     this.isChecked.set(!this.isChecked());
-    this.themeChanged.emit(this.themeOption());
+    this.themeChanged.emit();
   }
 }

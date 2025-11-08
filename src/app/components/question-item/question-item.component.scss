@@ -11,6 +11,7 @@
         border: 3px solid var(--option-bg-primary);
         padding: s.$spacing-300;
         display: flex;
+        align-items: center;
         font-size: f.$font-size-h4;
         font-weight: f.$font-weight-h;
         line-height: 56px;
@@ -28,17 +29,15 @@
             text-align: center;
             margin-right: s.$spacing-400;
             color: c.$gray-500;
+            flex-shrink: 0;
         }
 
-        .status-icon {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            margin-top: -50%;
+        > span {
+            flex-grow: 2;
         }
     }
 
-    &:hover {
+    &.selected {
         .option {
             border-color: c.$purple-600;
 
@@ -48,17 +47,37 @@
             }
         }
     }
+
+    &.correct {
+        .option {
+            border-color: c.$green-500;
+            .icon {
+                color: white;
+                background-color: c.$green-500;
+            }
+        }
+    }
+
+    &.incorrect {
+        .option {
+            border-color: c.$red-500;
+            .icon {
+                color: white;
+                background-color: c.$red-500;
+            }
+        }
+    }
 }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     :host {
         .option {
+            font-size: f.$font-size-reg-mobile;
+            line-height: 1.2;
             padding: s.$spacing-200;
-            line-height: 40px;
             border-radius: 16px;
-            font-size: f.$font-size-h4-mobile;
-
             .icon {
+                line-height: 40px;
                 width: 40px;
                 height: 40px;
                 margin-right: s.$spacing-200;

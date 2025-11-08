@@ -1,9 +1,10 @@
 import { Directive, ElementRef, inject, input, OnInit } from "@angular/core";
 
-const ICON_SIZES = {
+export const ICON_SIZES = {
   large: '56px',
   medium: '40px',
   small: '24px',
+  smaller: '16px'
 } as const;
 
 @Directive({
@@ -11,7 +12,7 @@ const ICON_SIZES = {
   standalone: true,
 })
 export class IconSizeDirective implements OnInit {
-  size = input.required<'large' | 'medium' | 'small'>();
+  size = input.required<keyof typeof ICON_SIZES>();
 
   private _elementRef = inject(ElementRef<HTMLElement>);
 

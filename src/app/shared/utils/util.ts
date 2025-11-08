@@ -1,0 +1,1 @@
+export const extractType = (url: string) => url.split('/').pop()?.replace('.svg', '');

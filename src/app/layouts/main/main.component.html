@@ -1,20 +1,66 @@
 <main>
     <div class="content">
-        <div class="welcome-screen">
-            @if (!quizStarted()) {
+        @if (!quizStarted()) {
+            <div class="welcome-screen">
                 <h2>
                     <span class="heading-light">Welcome to the</span>
                     Frontend Quiz!
                 </h2>
                 <h6>Pick a subject to get started.</h6>
+            </div>
+        } @else {
+            @if (currentStep() < topicQuestions().length ) {
+                <div class="question">
+                    <h6>Question {{ currentStep() + 1 }} of {{ topicQuestions().length }}</h6>
+                    <h3>{{ topicQuestions()[currentStep()].question }}</h3>
+                </div>
+
+                <app-progress-bar 
+                    [currentStep]="currentStep() + 1"
+                    [totalSteps]="topicQuestions().length"
+                ></app-progress-bar>
+            } @else {
+                <div class="welcome-screen">
+                    <h2>
+                        <span class="heading-light">Quiz completed</span>
+                        You scored...
+                    </h2>
+                </div>
             }
-            <!-- question -->
-            <!-- progress bar -->
-        </div>
+        }
     </div>
     <div class="options">
-        @for (option of options(); track $index) {
-            <app-option-item [option]="option" [index]="$index" (select)="onSelect($event)"></app-option-item>
-        } 
+        @if (!quizStarted()) {
+            @for (option of topics(); track $index) {
+                <app-option-item [option]="option" [isMobileView]="isMobileView()" (select)="onSelect($event)"></app-option-item>
+            }
+        } @else {
+            @if (showFinalScreen()) {
+                <app-card 
+                    [selectedTopic]="selectedTopic()" 
+                    [correctAnswers]="finalCorrectAnswers()" 
+                    [isMobileView]="isMobileView()"
+                    [allQuestions]="answeredQuestions().length">
+                </app-card>
+
+                <app-button text="Play Again" (click)="onPlayAgain()" />
+            } @else {
+                @for(option of topicQuestions()[answeredQuestions().length].options; track $index) {
+                    <app-question-item 
+                        [class.selected]="selectedAnswer() === option"
+                        [class.correct]="showStatuses() && selectedAnswer() === option && getStatusIcon(option) === 'correct'"
+                        [class.incorrect]="showStatuses() && selectedAnswer() === option && getStatusIcon(option) === 'incorrect'"
+                        [option]="option" 
+                        [index]="$index"
+                        [selected]="selectedAnswer() === option"
+                        [statusIcon]="showStatuses() ? getStatusIcon(option) : null"
+                        [showIcon]="showStatuses()"
+                        (select)="!showStatuses() && onSelect($event)"
+                    ></app-question-item>
+                }
+                <app-button [text]="buttonText()" [hidden]="showStatuses()" [disabled]="!selectedAnswer().length" (click)="onSubmit()" />
+                <app-button [text]="showFinalScreen() ? 'Show Results' : 'Next Question'" [hidden]="!showStatuses()" (click)="onNextQuestion()" />
+            }
+        }
     </div>
 </main>

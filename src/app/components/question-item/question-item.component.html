@@ -1,0 +1,12 @@
+<div class="option">
+    <div class="icon">
+        <span>{{ optionIdxLetter() }}</span>
+    </div>
+    <span>{{ option() }}</span>
+
+    @if (showIcon() && statusIcon() !== null) {
+        <div class="status-icon">
+            <app-icon [type]="`${statusIcon()}`" [size]="mobileIcon() ? 'small' : 'medium'"></app-icon>
+        </div>
+    }
+</div>
