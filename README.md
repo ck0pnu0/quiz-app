@@ -21,8 +21,8 @@ This project is part of a **side initiative** to demonstrate my skills in:
 ✅ Score calculation and result view  
 ✅ Responsive and accessible design  
 ✅ Modular architecture with reusable components  
-✅ Basic state management with Signals or RxJS  
-✅ (Planned) Admin mode to add/edit quizzes
+⏳ TODO: Basic state management with Signals or RxJS  
+⏳ TODO: (Planned) Admin mode to add/edit quizzes
 
 ---
 
