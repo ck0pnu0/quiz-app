@@ -16,4 +16,16 @@ header {
             margin-right: s.$spacing-300;
         }
     }
+
+}
+
+@media only screen and (max-width: 767px) {
+    header {
+        margin-bottom: 20px;
+        h4.subject {
+            app-icon {
+                margin-right: s.$spacing-200;
+            }
+        }
+    }
 }

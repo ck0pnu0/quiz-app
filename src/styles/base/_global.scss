@@ -34,7 +34,8 @@ $icon-path: '/assets/images/icons';
     background-image: var(--bg-primary-img);
     background-color: var(--bg-primary-color);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     min-height: 100vh;
 }

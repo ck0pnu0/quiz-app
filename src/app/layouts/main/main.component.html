@@ -32,13 +32,14 @@
     <div class="options">
         @if (!quizStarted()) {
             @for (option of topics(); track $index) {
-                <app-option-item [option]="option" (select)="onSelect($event)"></app-option-item>
+                <app-option-item [option]="option" [isMobileView]="isMobileView()" (select)="onSelect($event)"></app-option-item>
             }
         } @else {
             @if (showFinalScreen()) {
                 <app-card 
                     [selectedTopic]="selectedTopic()" 
                     [correctAnswers]="finalCorrectAnswers()" 
+                    [isMobileView]="isMobileView()"
                     [allQuestions]="answeredQuestions().length">
                 </app-card>
 

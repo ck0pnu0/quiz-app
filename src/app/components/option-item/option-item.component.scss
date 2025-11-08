@@ -49,3 +49,20 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    :host {
+        .option {
+            padding: s.$spacing-200;
+            line-height: 40px;
+            border-radius: 16px;
+            font-size: f.$font-size-h4-mobile;
+
+            .icon {
+                width: 40px;
+                height: 40px;
+                margin-right: s.$spacing-200;
+            }
+        }
+    }
+}

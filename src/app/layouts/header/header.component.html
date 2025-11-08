@@ -2,10 +2,10 @@
     <div class="topic">
         @if(topic().length) {
             <h4 class="subject">
-                <app-icon [type]="topic()" size="large"></app-icon>
+                <app-icon [type]="topic()" [size]="isMobileView() ? 'medium' : 'large'"></app-icon>
                 {{ topic() }}
             </h4>
         }
     </div>
-    <theme-switch (themeChanged)="onThemeChanged()"></theme-switch>
+    <theme-switch [isMobileView]="isMobileView()" (themeChanged)="onThemeChanged()"></theme-switch>
 </header>

@@ -1,6 +1,6 @@
 <div class="option">
     <div class="icon">
-        <app-icon [type]="icon()!" size="large"></app-icon>
+        <app-icon [type]="icon()!" [size]="isMobileView() ? 'medium' : 'large'"></app-icon>
     </div>
     <span>{{ option().title }}</span>
 </div>

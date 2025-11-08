@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, computed, HostBinding, HostListener, input, output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, HostListener, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { optionIndexes } from './option-item.model';
 import { Quizzes } from '../../shared/utils';
 import { extractType } from '../../shared/utils/util';
 import { IconComponent } from '../icon/icon.component';
@@ -14,6 +13,7 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class OptionItemComponent {
   option = input.required<Quizzes>();
+  isMobileView = input.required<boolean>();
 
   icon = computed(() => extractType(this.option().icon));
   optionContent = computed(() => this.option().title || this.option());

@@ -11,4 +11,5 @@ export class CardComponent {
   selectedTopic = input.required<string>();
   correctAnswers = input.required<number>();
   allQuestions = input.required<number>();
+  isMobileView = input.required<boolean>();
 }

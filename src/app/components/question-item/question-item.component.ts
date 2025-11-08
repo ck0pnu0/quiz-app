@@ -1,4 +1,4 @@
-import { Component, computed, HostListener, input, output } from '@angular/core';
+import { Component, computed, HostListener, input, output, signal } from '@angular/core';
 import { optionIndexes } from '../option-item';
 import { IconComponent } from '../icon/icon.component';
 import { Status } from '../../shared/utils';
@@ -15,6 +15,7 @@ export class QuestionItemComponent {
   selected = input.required<boolean>();
   showIcon = input.required<boolean>();
   statusIcon = input.required<Status | null>();
+  mobileIcon = signal<boolean>(window.screen.width < 768);
 
   optionIdxLetter = computed(() => optionIndexes[this.index()]);
   

@@ -6,7 +6,7 @@
 
     @if (showIcon() && statusIcon() !== null) {
         <div class="status-icon">
-            <app-icon [type]="`${statusIcon()}`" size="medium"></app-icon>
+            <app-icon [type]="`${statusIcon()}`" [size]="mobileIcon() ? 'small' : 'medium'"></app-icon>
         </div>
     }
 </div>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, output, signal } from '@angular/core';
 import { OptionItemComponent } from '../../components/option-item/option-item.component';
 import { QuizService } from '../../shared/services/quiz.service';
 import { QuestionItemComponent } from '../../components/question-item/question-item.component';
@@ -17,6 +17,8 @@ import { CardComponent } from '../../components/card/card.component';
 export class MainComponent {
   quizService = inject(QuizService);
   topics = this.quizService.topics;
+
+  isMobileView = input.required<boolean>();
 
   quizStarted = signal<boolean>(false)
   selectedTopic = signal<string>('');

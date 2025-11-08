@@ -1,6 +1,6 @@
 <div class="card">
     <h4 class="subject">
-        <app-icon [type]="selectedTopic()" size="large"></app-icon>
+        <app-icon [type]="selectedTopic()" [size]="isMobileView() ? 'medium' : 'large'"></app-icon>
         {{ selectedTopic() }}
     </h4>
     <h1>{{ correctAnswers() }}</h1>

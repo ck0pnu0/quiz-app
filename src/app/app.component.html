@@ -1,7 +1,7 @@
 <div class="app">
     <div class="container">
-        <app-header [topic]="topic()" (themeChanged)="onThemeChanged()"></app-header>
-        <app-main (topicSelected)="onTopicSelect($event)">
+        <app-header [topic]="topic()" (themeChanged)="onThemeChanged()" [isMobileView]="isMobileView()"></app-header>
+        <app-main (topicSelected)="onTopicSelect($event)" [isMobileView]="isMobileView()">
             <router-outlet />
         </app-main>
     </div>

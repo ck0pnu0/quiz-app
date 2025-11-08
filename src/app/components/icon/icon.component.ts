@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { IconSizeDirective } from '../../shared';
+import { ICON_SIZES, IconSizeDirective } from '../../shared';
 
 @Component({
     selector: 'app-icon',
@@ -11,5 +11,5 @@ import { IconSizeDirective } from '../../shared';
 export class IconComponent {
   type = input.required<string>();
   formatType = computed(() => this.type().toLowerCase() === 'javascript' ? 'js' : this.type().toLowerCase());
-  size = input.required<'large' | 'medium' | 'small'>();
+  size = input.required<keyof typeof ICON_SIZES>();
 }
